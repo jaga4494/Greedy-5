@@ -44,7 +44,8 @@ class Main {
         int n = workers.length;
         int m = bikes.length;
 
-        // instead of PQ, we can use a map of dist to list to (w,b) and maintain a min and max key for the map (to avoid TreeMap - which again takes log time)
+        // instead of PQ, to reduce logn to n,
+        // we can use a map of dist to list to (w,b) and maintain a min and max key for the map (to avoid TreeMap - which again takes log time)
         // no need to sort them internally based on w and b index because of the for loop that we will do like i = 0 to n and j = 0 to m. 
         PriorityQueue<int[]> pq = new PriorityQueue<>((x,y) -> {
             if (x[0] != y[0]) return x[0] - y[0];
